@@ -148,5 +148,5 @@ def main():
 		draw_text(str(pontos), (255, 255, 255), screen, 20, 20)
 		#display_fps(clock)
 		pygame.display.update()
-		clock.tick(200)
+		clock.tick(60)
 main()
