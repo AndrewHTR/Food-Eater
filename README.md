@@ -1,6 +1,9 @@
-# Cat Foooood
+# Foooood Eater
 
 Jogo feito com oque aprendi até o momento.
+
+Você é um bebê que sonha com sua comida favorita... COOKIES!
+Coma! Coma até não aguentar mais e domine toda a janela!
 
 WASD ou Setas para ir a qualquer direção
 

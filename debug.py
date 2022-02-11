@@ -9,4 +9,4 @@ def draw_text(texto,color, surface, x, y):
 def display_fps(clock):
 	screen = pygame.display.get_surface()
 
-	draw_text(str(int(clock.get_fps())),(255, 255, 255), screen, 20, 20)
+	draw_text(str(int(clock.get_fps())),(0, 255, 255), screen, 20, 20)
