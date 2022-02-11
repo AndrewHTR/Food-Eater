@@ -1,6 +1,7 @@
 import pygame, sys
 from pygame.locals import *
 from random import randint
+from debug import *
 # Iniciando pygame
 pygame.init()
 
@@ -11,6 +12,13 @@ HEIGHT = 400
 screen = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
 pygame.display.set_caption("Cat Foooood")
 clock = pygame.time.Clock()
+
+def draw_text(texto,color, surface, x, y):
+	font = pygame.font.SysFont(None, 32)
+	textobj = font.render(texto, True, color)
+	textrect = textobj.get_rect()
+	textrect.topleft = (x, y)
+	surface.blit(textobj, textrect)
 
 def main():
 	# Jogador
@@ -91,7 +99,7 @@ def main():
 					DOWN = False
 				if event.key == K_x:
 					PLAYER_LOCAL = [randint(0, WIDTH - tamanho_comida), randint(0, HEIGHT - tamanho_comida)]
-			if event.type == MOUSEBUTTONUP:
+			if event.type == MOUSEBUTTONDOWN:
 				comidas.append(pygame.Rect(mouse[0], mouse[1], tamanho_comida, tamanho_comida))
 
 		temporizador_comida_nova += 1
@@ -104,6 +112,7 @@ def main():
 		for i in range(len(comidas)):
 			pygame.draw.rect(screen, (0, 255, 0), comidas[i])
 		pygame.draw.rect(screen, (0, 0, 255), player)
+		display_fps(clock)
 		pygame.display.update()
 		clock.tick(60)
 main()
